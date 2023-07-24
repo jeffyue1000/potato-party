@@ -16,6 +16,15 @@ export default function SignupPage(){
     const [buttonDisabled, setButtonDisabled] = useState(false);
     const [loading, setLoading] = useState(false);
 
+    useEffect(() => {
+        if(user.email.length > 0 && user.password.length > 0 && user.username.length > 0){
+            setButtonDisabled(false);
+        }
+        else{
+            setButtonDisabled(true);
+        }
+    }, [user]);
+
     const onSignUp = async() => {
         try{
             setLoading(true);
@@ -31,15 +40,6 @@ export default function SignupPage(){
             setLoading(false);
         }
     };
-
-    useEffect(() => {
-        if(user.email.length > 0 && user.password.length > 0 && user.username.length > 0){
-            setButtonDisabled(false);
-        }
-        else{
-            setButtonDisabled(true);
-        }
-    }, [user]);
 
     {/* change button to just turn on/off based on buttonDisabled and incorporate email/user/password validation */}
     return(
