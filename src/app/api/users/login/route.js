@@ -1,9 +1,8 @@
 import { connect } from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken"
-import { cookies } from "next/dist/client/components/headers";
 
 connect();
 
@@ -18,8 +17,7 @@ export async function POST(request){
         if(!user){
             return NextResponse.json({error: "User does not exist"}, {status: 400});
         }
-
-        //chec if password is correct
+        //check if password is correct
         const validPassword = await bcryptjs.compare(password, user.password);
         if(!validPassword){
             return NextResponse.json({error: "Invalid password"}, {status: 400});
@@ -38,8 +36,12 @@ export async function POST(request){
             message: "Login successful",
             success: true
         })
+        let date = new Date();
+        date.setDate(date.getDate + 1);
+
         response.cookies.set("token", token, {
-            httpOnly: true
+            httpOnly: true,
+            expires: date
         })
 
         return response;
