@@ -2,19 +2,24 @@ import { connect } from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
 import { NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
+import { sendEmail } from "@/helpers/mailer";
 
 connect();
 
  export async function POST(request){
      try{
-        const requestBody = await request.json();
-        const {username, email, password} = requestBody;
+        const reqBody = await request.json();
+        const {username, email, password} = reqBody;
 
         //check if user exists 
-        const userExists = await User.findOne({email});
-
-        if(userExists){
-            return NextResponse.json({error: "User already exists"}, {status: 400});
+        const emailExists = await User.findOne({email});
+        const usernameExists = await User.findOne({username});
+        
+        if(emailExists){
+            return NextResponse.json({error: "Email taken"}, {status: 400});
+        }
+        if(usernameExists){
+            return NextResponse.json({error: "Username taken"}, {status: 400});
         }
 
         //create hashed password
@@ -29,6 +34,9 @@ connect();
 
         const savedUser = await newUser.save();
         
+        //verification email
+        await sendEmail({email, emailType: "VERIFY", userID: savedUser._id}); //change verify to be in env? or a const
+
         return NextResponse.json({
             message: "User created successfully",
             success: true,

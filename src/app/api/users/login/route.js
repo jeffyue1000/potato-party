@@ -22,6 +22,9 @@ export async function POST(request){
         if(!validPassword){
             return NextResponse.json({error: "Invalid password"}, {status: 400});
         }
+        if(user.isVerified === false){
+            return NextResponse.json({error: "User not verified"}, {status: 400});
+        }
 
         //create token data
         const tokenData = {
@@ -36,12 +39,9 @@ export async function POST(request){
             message: "Login successful",
             success: true
         })
-        let date = new Date();
-        date.setDate(date.getDate + 1);
 
         response.cookies.set("token", token, {
             httpOnly: true,
-            expires: date
         })
 
         return response;
