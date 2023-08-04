@@ -1,9 +1,6 @@
 body{
     overflow: hidden;
 }
-input, label{
-    display: block;
-}
 input{
     padding: 5px;
     margin-top: 3px;
@@ -33,7 +30,7 @@ input:focus::placeholder{
     font-size: 25px;;
     border: solid;
 }
-.reset-password-box{
+.dashboard-box{
     padding: 4vh;
     margin-bottom: 20%;
     background-color: white;
@@ -41,53 +38,91 @@ input:focus::placeholder{
     border-style: solid;
     border-radius: 15px;
     border-width: 3px;
-    width: 320px;
-    min-height: 350px;
+    width: 470px;
+    min-height: 475px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 1px 1px 30px rgb(184, 195, 222); 
 
 }
-.reset-password-header{
-    margin-top: 10px;
+.dashboard-header{
+    margin-top: 5px;
     margin-bottom: 15px;
 }
-.user-input{
-    margin: 15px;
+.user-attributes{
+    padding: 10px;
+    width: 450px;
+    height: 90px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
 }
-.password-match{
-    font-size: 12px;
-    margin-top: 215px;
-    position: absolute;
+.username-password, .email-admin{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.reset-btn{
+.room-btns{
+    height: 150px;
+    width: 460px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logout-btn, .new-room-btn, .join-room-btn, .watchlist-btn{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 15px;
     background-color: white;
     border-color: #e8b720;
     border-style: solid;
     border-radius: 100px;
-    margin: 25px;
-    margin-bottom: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 22px;
+    padding-right: 22px;
     transition-duration: 0.2s;
 }
-.reset-btn:hover:enabled{
+.logout-btn{
+    margin-left: 20px;
+}
+.new-room-btn{
+    margin: 5px;
+}
+.join-room-btn{
+    margin: 5px;
+}
+.watchlist-btn{
+    margin-left: 20px;
+}
+.logout-btn:hover, .new-room-btn:hover, .join-room-btn:hover, .watchlist-btn:hover{
     color: white;
     background-color: #e8b720;
 }
-.to-login{
-    margin-bottom: 10px;
+.or{
+    margin: 10px;
+}
+.watchlist-logout{
+    margin-top: 10px;
+    min-width: 400px;
+    display: flex;
+    align-items: center;
+}
+.to-watchlist{
+    display: flex;
+    min-width: 210px;
+    align-items: center;
+}
+.to-watchlist-container{
+    width: 230px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
-.reset-success{
-    margin-bottom: 10px;
+.to-watchlist{
+    text-align: center;
+    width: 140px;
 }
-
-

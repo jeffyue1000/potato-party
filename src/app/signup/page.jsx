@@ -70,7 +70,7 @@ export default function SignupPage(){
                         id="username"
                         type="text"
                         value={user.username}
-                        placeholder="Type username here"
+                        placeholder="Type username here..."
                         onChange={e => {
                             setUser({...user, username: e.target.value})
                         }}
@@ -82,7 +82,7 @@ export default function SignupPage(){
                         id="email"
                         type="text"
                         value={user.email}
-                        placeholder="Type email here"
+                        placeholder="Type email here..."
                         onChange={e => {
                             setUser({...user, email: e.target.value})
                         }}
@@ -94,7 +94,7 @@ export default function SignupPage(){
                         id="password"
                         type="password"
                         value={user.password}
-                        placeholder="Type password here"
+                        placeholder="Type password here..."
                         onChange={e => {
                             setUser({...user, password: e.target.value})
                         }}

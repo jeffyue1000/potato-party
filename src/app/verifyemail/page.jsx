@@ -2,6 +2,7 @@
 import axios from "axios";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import "./verifyemail.css";
 
 export default function VerifyEmailPage(){
     const [token, setToken] = useState("");
@@ -30,26 +31,26 @@ export default function VerifyEmailPage(){
     }
 
     return(
-        <div> 
-            <h1>Verify Email</h1>
-            <h2 className="p-2 bg-orange-500 text-black">{token ? `${token}` : "no token"}</h2>
-            {!verified && (
-                <div>
-                    <h2>Please check your email to verify your account</h2>
-                    <h2>Reload once verified</h2>
-                </div>
-            )}
-            {verified && (
-                <div>
-                    <h2>Email Verified</h2>
-                    <Link href="/login">Login Page</Link>
-                </div>
-            )}
-            {error && (
-                <div>
-                    <h2>Error</h2>
-                </div>
-            )}
+        <div className="container"> 
+            <div className="title">Potato Couch Logo</div>
+            <div className="verify-box">
+                <h1 className="verify-header">Verify Email</h1>
+                {!verified && (
+                    <div>
+                        <div className="verify-text">Check your email to verify your account.</div>
+                        <div className="verify-text">You may close out of this page.</div>
+                    </div>
+                )}
+                {verified && (
+                    <div className="verify-success">
+                        <div className="success-text">Email Verified!</div>
+                        <Link className="success-text" href="/login">Return to Login Page</Link>
+                    </div>
+                )}
+                {error && (
+                    <div className="verify-text">Error</div>
+                )}
+            </div>
         </div>
     )
 }

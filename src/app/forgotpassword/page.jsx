@@ -8,7 +8,7 @@ export default function ForgotPasswordPage(){
     const [email, setEmail] = useState("");
     const [invalidEmail, setInvalidEmail] = useState(false);
     const [emailSent, setEmailSent] = useState(false);
-
+    const [loading, setLoading] = useState(false);
     useEffect(() => { 
         const forgotBtn = document.getElementById("forgot-btn");
         if(email.length > 0){
@@ -22,8 +22,10 @@ export default function ForgotPasswordPage(){
     const sendForgotPasswordEmail = async() => {
         try{
             setInvalidEmail(false);
+            setLoading(true);
             await axios.post("/api/users/forgotPassword", {email});
             setEmailSent(true);
+            setLoading(false);
         } catch(error){
             const response = await axios.post("/api/users/badEmail", {email});
             if(response.data.message === "Email not found"){
@@ -35,7 +37,7 @@ export default function ForgotPasswordPage(){
         <div className="container">
             <div className="title">Potato Couch Logo</div>
             <div className="forgot-password-box">
-                <h1 className="forgot-password-header">Forgot Password</h1>
+                <h1 className="forgot-password-header">{loading ? "Loading..." : "Forgot Password"}</h1>
                 <div className="reset-instructions">
                     To reset your password, please enter your email below to receive a reset password link.
                 </div>

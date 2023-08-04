@@ -8,6 +8,7 @@ export default function ForgotPasswordPage(){
     const [confirmPassword, setConfirmPassword] = useState("");
     const [passwordsMatch, setPasswordsMatch] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [user, setUser] = useState({
         token: "",
         password: "",
@@ -34,12 +35,13 @@ export default function ForgotPasswordPage(){
         }
     }, [confirmPassword])
 
-    const resetPassword = async() => {
+    const onResetPassword = async() => {
         try{
-            console.log(user.token)
+            setLoading(true);
             const response = await axios.post("/api/users/resetPassword", user);
             console.log("Password changed", response.data);
             setSuccess(true);
+            setLoading(false);
         } catch(error){
             console.log("Reset failed", error.message);
         }
@@ -49,14 +51,14 @@ export default function ForgotPasswordPage(){
         <div className="container">
             <div className="title">Potato Couch Logo</div>
             <div className="reset-password-box">
-                <h1 className="reset-password-header">Reset Password</h1>
+                <h1 className="reset-password-header">{loading ? "Loading..." : "Reset Password"}</h1>
                 <div className="user-input">
                     <label htmlFor="password">New Password</label>
                     <input
                         id="password"
                         type="password"
                         value={user.password}
-                        placeholder="Type password here"
+                        placeholder="Type password here..."
                         onChange={e => {
                             setUser({...user, password: e.target.value})
                         }}
@@ -68,7 +70,7 @@ export default function ForgotPasswordPage(){
                         id="confirm-password"
                         type="password"
                         value={confirmPassword}
-                        placeholder="Re-type password here"
+                        placeholder="Re-type password here..."
                         onChange={e => {
                             setConfirmPassword(e.target.value);
                         }}
@@ -77,7 +79,7 @@ export default function ForgotPasswordPage(){
                 {!passwordsMatch && (
                     <div className="password-match">Passwords do not match!</div>
                 )}
-                <button className="reset-btn" id="reset-btn" onClick={resetPassword}>Reset Password</button>
+                <button className="reset-btn" id="reset-btn" onClick={onResetPassword}>Reset Password</button>
                 {success && (
                     <div className="to-login">
                         <div className="reset-success">Password has been reset!</div>
