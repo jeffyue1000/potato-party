@@ -56,7 +56,7 @@ export default function LoginPage(){
                 <div className="user-input">
                     <label htmlFor="emai">Email</label>
                     <input
-                        id="email"
+                        className="email-input"
                         type="text"
                         value={user.email}
                         placeholder="Type email here..."
@@ -68,7 +68,7 @@ export default function LoginPage(){
                 <div className="user-input">
                     <label htmlFor="password">Password</label>
                     <input
-                        id="password"
+                        className="password-input"
                         type="password"
                         value={user.password}
                         placeholder="Type password here..."

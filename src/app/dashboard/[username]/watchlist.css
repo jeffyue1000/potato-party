@@ -1,13 +1,14 @@
 body{
     overflow: hidden;
 }
-.room-code-input{
-    padding: 5px;
+.add-watchlist-input, .add-watchlist-link-input{
+    padding: 2px;
+    padding-left: 5px;
     margin-top: 3px;
     border-radius: 10px;
     border-color: #e8b720;
     border-style: solid;
-    width: 200px;
+    min-width: 170px;
     height: 23px;
 }
 input:focus{
@@ -26,12 +27,13 @@ input:focus::placeholder{
     justify-content: center;
 }
 .title{
+    padding: 10px;
     margin-top: 325px;
     margin-bottom: 30px;
     font-size: 25px;;
     border: solid;
 }
-.dashboard-box{
+.watchlist-box{
     padding: 4vh;
     margin-bottom: 20%;
     background-color: white;
@@ -40,40 +42,29 @@ input:focus::placeholder{
     border-radius: 15px;
     border-width: 3px;
     width: 470px;
-    min-height: 475px;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 1px 1px 30px rgb(184, 195, 222); 
 
 }
-.dashboard-header{
+.watchlist-header{
     margin-top: 5px;
     margin-bottom: 15px;
 }
-.user-attributes{
-    padding: 10px;
-    width: 450px;
-    height: 90px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.add-to-watchlist{
     display: flex;
-    justify-content: space-between;
 }
-.username-password, .email-admin{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.watchlist-inputs{
+    display: block;
+    max-width: 190px;
 }
-.room-btns{
-    height: 150px;
-    width: 460px;
-    margin-top: 10px;
+.watchlist-btn-box{
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
-.logout-btn, .new-room-btn, .join-room-btn, .watchlist-btn{
+button{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 15px;
     background-color: white;
@@ -86,48 +77,48 @@ input:focus::placeholder{
     padding-right: 22px;
     transition-duration: 0.2s;
 }
-.logout-btn{
-    margin-left: 20px;
-}
-.new-room-btn{
-    margin: 5px;
-}
-.join-room-btn{
-    margin: 5px;
-}
-.watchlist-btn{
-    margin-left: 20px;
-}
-.logout-btn:hover, .new-room-btn:hover, .join-room-btn:hover, .watchlist-btn:hover{
+button:hover:enabled{
     color: white;
     background-color: #e8b720;
 }
-.or{
-    margin: 10px;
+.profile-btn{
+    margin-right: 25px;
 }
-.join-room{
-    display: flex;
-    align-items: center;
+.logout-btn{
+    margin-left: 25px;
+}
+.add-btn{
+    margin-right: 10px;
+}
+.watchlist{
+    border:solid;
+    border-color: #e8b720;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px;
+    margin-bottom: 5px;
+    height: 500px;
+    width: 400px;
+    overflow: auto;
+}
+::-webkit-scrollbar{
+    width: 10px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #e8b720;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #dba709;
+}
+.watchlist-member{
+    margin-left: 25px;
 }
 .watchlist-logout{
     margin-top: 10px;
     min-width: 400px;
     display: flex;
     align-items: center;
-}
-.to-watchlist{
-    display: flex;
-    min-width: 210px;
-    align-items: center;
-}
-.to-watchlist-container{
-    width: 230px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-}
-.to-watchlist{
-    text-align: center;
-    width: 140px;
 }

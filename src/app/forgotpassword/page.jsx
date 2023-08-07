@@ -9,6 +9,7 @@ export default function ForgotPasswordPage(){
     const [invalidEmail, setInvalidEmail] = useState(false);
     const [emailSent, setEmailSent] = useState(false);
     const [loading, setLoading] = useState(false);
+    
     useEffect(() => { 
         const forgotBtn = document.getElementById("forgot-btn");
         if(email.length > 0){
@@ -31,6 +32,7 @@ export default function ForgotPasswordPage(){
             if(response.data.message === "Email not found"){
                 setInvalidEmail(true);
             }
+            setLoading(false);
         }
     }
     return(
@@ -44,10 +46,10 @@ export default function ForgotPasswordPage(){
                 <div className="user-input">
                     <label htmlFor="password">Email</label>
                     <input
-                        id="email"
+                        className="email-input"
                         type="text"
                         value={email}
-                        placeholder="Type email here"
+                        placeholder="Type email here..."
                         onChange={e => {
                             setEmail(e.target.value);
                         }}

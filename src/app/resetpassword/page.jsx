@@ -55,7 +55,7 @@ export default function ForgotPasswordPage(){
                 <div className="user-input">
                     <label htmlFor="password">New Password</label>
                     <input
-                        id="password"
+                        className="password-input"
                         type="password"
                         value={user.password}
                         placeholder="Type password here..."
@@ -67,7 +67,7 @@ export default function ForgotPasswordPage(){
                 <div className="user-input">
                     <label htmlFor="confirm-password">Confirm Password</label>
                     <input
-                        id="confirm-password"
+                        className="confirm-password-input"
                         type="password"
                         value={confirmPassword}
                         placeholder="Re-type password here..."

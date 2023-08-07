@@ -1,42 +1,37 @@
 "use client";
 import axios from "axios";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 import "./dashboard.css"
 
 export default function ProfilePage(){
     const router = useRouter();
-    const [showPassword, setShowPassword] = useState(false);
-    const [hiddenPassword, setHiddenPassword] = useState("xxxxxxxxxxx");
     const [roomCode, setRoomCode] = useState("");
     const [user, setUser] = useState({
-        username: "tester",
-        email: "jeffyue1000@gmail.com",
-        password: "Test Password",
+        username: "",
+        email: "",
+        verified: true,
         admin: false,
     });
 
-    // useEffect(() => {
-    //     getUserData();
-    //     let newHiddenPassword = "";
-    //     for(let i = 0; i < user.password.length; i++){
-    //         newHiddenPassword += "*";
-    //     }
-    //     setHiddenPassword(newHiddenPassword);
-    // }, [])
+    useEffect(() => {
+        getUserData();
+    }, [])
 
     const getUserData = async() => {
-        const result = await axios.get("/api/users/me");
-        console.log("check")
+        try{
+            const response = await axios.get("/api/users/me");
 
-        setUser({
-            username: response.data.data.username, 
-            email: response.data.data.email, 
-            password: response.data.data.password, 
-            admin: esponse.data.data.isAdmin
-        });
+            setUser({
+                username: response.data.data.username, 
+                email: response.data.data.email, 
+                verified: response.data.data.isVerified, 
+                admin: response.data.data.isAdmin,
+            });
+        } catch(error){
+            console.log(error.message);
+        }
     }
     
     const createNewRoom = () => {
@@ -49,15 +44,10 @@ export default function ProfilePage(){
     const logout = async() => {
         try{
             await axios.get("/api/users/logout");
-            toast.success("Logout successful");
             router.push("/login");
         } catch (error){
             console.log(error.message);
-            toast.error(error.message);
         }
-    }
-    const toWatchlist = () => {
-        router.push(`/dashboard/${user.username}`);
     }
     return (
         <div className="container">
@@ -67,12 +57,7 @@ export default function ProfilePage(){
                 <div className="user-attributes"> 
                     <div className="username-password">
                         <div className="username">Username: {user.username}</div>
-                        <div 
-                            onMouseEnter={() => setShowPassword(true)} 
-                            onMouseLeave={() => setShowPassword(false)}
-                            className="password"> 
-                            Password: {showPassword ? user.password : hiddenPassword}
-                        </div>
+                        <div className="verified"> Verified: {user.verified ? "True" : "False"}</div>
                     </div>
                     <div className="email-admin">
                         <div className="email">Email: {user.email}</div>
@@ -100,12 +85,10 @@ export default function ProfilePage(){
                 <div className="or">or</div>
                 <div className="watchlist-logout">
                     <div className="to-watchlist">
-                        <button className="watchlist-btn" onClick={toWatchlist}>View Watchlist</button>
+                        <button className="watchlist-btn" onClick={() => {router.push(`/dashboard/${user.username}`)}}>View Watchlist</button>
                     </div>
                     <button className="logout-btn" onClick={logout}>Return to Login</button>
                 </div>
-
-
             </div>
         </div>
     )

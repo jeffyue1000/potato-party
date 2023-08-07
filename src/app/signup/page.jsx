@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import "./signup.css";
-import { resolve } from "styled-jsx/css";
 
 export default function SignupPage(){
     const router = useRouter();
@@ -66,8 +65,7 @@ export default function SignupPage(){
                 <div className="user-input">
                     <label htmlFor="username">Username</label>
                     <input
-                        className="usernameinput"
-                        id="username"
+                        className="username-input"
                         type="text"
                         value={user.username}
                         placeholder="Type username here..."
@@ -79,7 +77,7 @@ export default function SignupPage(){
                 <div className="user-input">
                     <label htmlFor="emai">Email</label>
                     <input
-                        id="email"
+                        className="email-input"
                         type="text"
                         value={user.email}
                         placeholder="Type email here..."
@@ -91,7 +89,7 @@ export default function SignupPage(){
                 <div className="user-input">
                     <label htmlFor="password">Password</label>
                     <input
-                        id="password"
+                        className="password-input"
                         type="password"
                         value={user.password}
                         placeholder="Type password here..."

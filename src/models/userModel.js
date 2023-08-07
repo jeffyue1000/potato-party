@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "Password is required"],
     },
+    watchlist: {
+        type: Array,
+        default: [],
+    },
     isVerified: {
         type: Boolean,
         default: false,

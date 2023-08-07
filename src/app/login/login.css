@@ -4,7 +4,7 @@ body{
 input, label{
     display: block;
 }
-input{
+.email-input, .password-input{
     padding: 5px;
     margin-top: 3px;
     margin-bottom: 1px;

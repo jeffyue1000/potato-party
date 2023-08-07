@@ -11,7 +11,7 @@ export async function GET(request){
         const user = await User.findOne({_id: userID});
         return NextResponse.json({ //could return user directly maybe
             message: "User found",
-            data: user
+            data: user,
         })
     } catch(error){
         return NextResponse.json({error: error.message}, {status: 400});
