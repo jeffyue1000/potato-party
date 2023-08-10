@@ -1,24 +1,6 @@
 body{
     overflow: hidden;
 }
-input, label{
-    display: block;
-}
-.email-input, .password-input{
-    padding: 5px;
-    margin-top: 3px;
-    margin-bottom: 1px;
-    border-radius: 10px;
-    border-color: #e8b720;
-    border-style: solid;
-    width: 200px;
-}
-input:focus{
-    outline-color: #e8b720;
-}
-input:focus::placeholder{
-    color: transparent;
-}
 .container{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     height: 100vh;
@@ -34,7 +16,7 @@ input:focus::placeholder{
     font-size: 25px;;
     border: solid;
 }
-.login-box{
+.upload-video-box{
     padding: 4vh;
     margin-bottom: 20%;
     background-color: white;
@@ -42,53 +24,67 @@ input:focus::placeholder{
     border-style: solid;
     border-radius: 15px;
     border-width: 3px;
-    width: 320px;
-    min-height: 380px;
+    width: 380px;
+    height: 550px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 1px 1px 30px rgb(184, 195, 222); 
 }
-.login-header{
-    margin-top: 10px;
-    margin-bottom: 10px;
+.upload-header{
+    margin-top: 8px;
+    margin-bottom: 2px;
 }
-.user-input{
-    margin: 14px;
+.upload-desc{
+    text-align: center;
+    margin: 25px;
+    width: 300px;
 }
-.forgot-pass-link{
-    font-size: 12px;
-    padding-left: 2px;
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.login-btn{
+.drop-box{
+    text-align: center;
+    padding: 5px;
+    border: solid;
+    border-color: #e8b720;
+    border-radius: 10px;
+    width: 300px;
+}
+.video-preview-box{
+    margin: 10px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.video-preview{
+    margin: 10px;
+    margin-top: 0px;
+    border: solid;
+    border-color:#e8b720
+}
+.preview-btns{  
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.remove-btn, .submit-btn{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 15px;
     background-color: white;
     border-color: #e8b720;
     border-style: solid;
     border-radius: 100px;
-    margin: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 30px;
     padding-right: 30px;
     transition-duration: 0.2s;
 }
-.login-btn:hover:enabled{
+.remove-btn:hover, .submit-btn:hover{
     color: white;
     background-color: #e8b720;
-}
-.invalid-login{
-    margin-top: 235px;
-    font-size: 14px;
-    position: absolute;
-}
-.to-signup{
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.no-account{
-    margin-bottom: 10px;
 }

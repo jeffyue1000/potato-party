@@ -2,7 +2,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { toast } from "react-hot-toast";
 import "./dashboard.css"
 
 export default function ProfilePage(){
@@ -33,10 +32,6 @@ export default function ProfilePage(){
             console.log(error.message);
         }
     }
-    
-    const createNewRoom = () => {
-
-    }
     const joinRoom = () => {
 
     }
@@ -66,7 +61,7 @@ export default function ProfilePage(){
                     </div>
                 </div>
                 <div className="room-btns">
-                    <button className="new-room-btn" onClick={createNewRoom}>Create New Room</button>
+                    <button className="new-room-btn" onClick={() => {router.push("/createroom")}}>Create New Room</button>
                     <div className="or">or</div>
                     <div className="join-room">
                         <input
