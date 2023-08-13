@@ -102,6 +102,10 @@ input:focus::placeholder{
     color: white;
     background-color: #e8b720;
 }
+.room-nonexistent{
+    font-size: 14px;
+    margin-top: 3px;
+}
 .or{
     margin: 10px;
 }

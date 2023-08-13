@@ -1,4 +1,5 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";;
+import jwt from "jsonwebtoken"
 
 export function middleware(request){
     const path = request.nextUrl.pathname;
@@ -6,12 +7,12 @@ export function middleware(request){
     const isPublicPath = path === "/login" || path === "/signup" || path === "/verifyemail" || path === "/";
     const isResetPasswordPath = path === "/forgotpassword" || path === "/resetpassword";
 
-    const token = request.cookies.get("token")?.value || "";
+    const userToken = request.cookies.get("userInfo")?.value || "";
 
-    if(isPublicPath && token || isResetPasswordPath && token){
+    if(isPublicPath && userToken || isResetPasswordPath && userToken){
         return NextResponse.redirect(new URL("/dashboard", request.nextUrl));
     }
-    if(!isPublicPath && !isResetPasswordPath && !token){
+    if(!isPublicPath && !isResetPasswordPath && !userToken){
         return NextResponse.redirect(new URL("/login", request.nextUrl));
     }
 }
@@ -25,6 +26,8 @@ export const config = {
         "/signup",
         "/verifyemail",
         "/forgotpassword",
-        "/resetpassword"
+        "/resetpassword",
+        "/createroom",
+        "/joinroom/:path*"
     ]
 }

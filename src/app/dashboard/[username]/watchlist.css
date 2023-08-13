@@ -115,7 +115,7 @@ button:hover:enabled{
 .watchlist-member{
     margin-left: 25px;
 }
-.watchlist-logout{
+.navigation-btns{
     margin-top: 10px;
     min-width: 400px;
     display: flex;

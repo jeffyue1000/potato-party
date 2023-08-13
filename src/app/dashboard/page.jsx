@@ -7,6 +7,7 @@ import "./dashboard.css"
 export default function ProfilePage(){
     const router = useRouter();
     const [roomCode, setRoomCode] = useState("");
+    const [roomExists, setRoomExists] = useState(true);
     const [user, setUser] = useState({
         username: "",
         email: "",
@@ -32,8 +33,14 @@ export default function ProfilePage(){
             console.log(error.message);
         }
     }
-    const joinRoom = () => {
-
+    const joinRoom = async() => {
+        try{
+            await axios.post("/api/users/roomExists", {roomCode});
+            router.push(`/joinroom/${roomCode}`);
+        } catch(error){
+            setRoomExists(false);
+            console.log(error.message);
+        }
     }
 
     const logout = async() => {
@@ -74,8 +81,9 @@ export default function ProfilePage(){
                                 setRoomCode(e.target.value);
                             }}
                         />
-                        <button className="join-room-btn" onClick={joinRoom}>Join a Room</button>
+                        <button className="join-room-btn" onClick={joinRoom}>Join Room</button>
                     </div>
+                    {roomExists ? <></> : <div className="room-nonexistent">There is no open room with that code!</div>}
                 </div>
                 <div className="or">or</div>
                 <div className="watchlist-logout">

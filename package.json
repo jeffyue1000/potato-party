@@ -14,16 +14,19 @@
     "axios": "^1.4.0",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.40.0",
+    "cloudinary-react": "^1.8.1",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.0",
+    "nanoid": "^4.0.2",
     "next": "^13.4.13",
     "nodemailer": "^6.9.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-dropzone": "^14.2.3",
-    "react-hot-toast": "^2.4.1"
+    "react-hot-toast": "^2.4.1",
+    "react-intersection-observer": "^9.5.2"
   },
   "devDependencies": {
     "@types/react": "18.2.16"

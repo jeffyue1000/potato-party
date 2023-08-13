@@ -3,7 +3,6 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { toast } from "react-hot-toast";
 import "./login.css";
 
 export default function LoginPage(){
@@ -31,7 +30,6 @@ export default function LoginPage(){
             setLoading(true);
             const response = await axios.post("/api/users/login", user);
             console.log("Login succcess", response.data);
-            toast.success("Login success");
             router.push("/dashboard");
         } catch(error){
             const response = await axios.post("/api/users/badLogin", user);
@@ -42,7 +40,6 @@ export default function LoginPage(){
                 setIsVerified(false);
             }
             console.log("Login failed", error.message);
-            toast.error(error.message);
         } finally{
             setLoading(false);
         }

@@ -6,7 +6,7 @@ export async function GET(){
             message: "Logout successful",
             success: true
         })
-        response.cookies.set("token", "", {
+        response.cookies.set("userInfo", "", {
             httpOnly: true,
             expires: new Date(0)
         })

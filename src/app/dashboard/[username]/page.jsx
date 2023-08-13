@@ -111,7 +111,7 @@ export default function PersonalPage(){
                         </li>
                     ))}
                 </ol>
-                <div className="watchlist-logout">
+                <div className="navigation-btns">
                     <button className="profile-btn" onClick={() => {router.push(`/dashboard`)}}>Return to Profile</button>
                     <button className="logout-btn" onClick={() => {logout}}>Return to Login</button>
                 </div>

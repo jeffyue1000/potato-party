@@ -40,7 +40,7 @@ export async function POST(request){
             success: true
         })
 
-        response.cookies.set("token", token, {
+        response.cookies.set("userInfo", token, {
             httpOnly: true,
         })
 
