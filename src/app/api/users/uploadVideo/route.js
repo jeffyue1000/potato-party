@@ -11,7 +11,8 @@ export async function POST(request){
         const {fileName, uuid} = reqBody;
 
         const newRoom = new Room({
-            roomCode: uuid
+            roomCode: uuid,
+            publicID: fileName
         });
 
         await newRoom.save();

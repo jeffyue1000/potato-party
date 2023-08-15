@@ -5,6 +5,15 @@ const roomSchema = new mongoose.Schema({
         type: String,
         required: [true, "Code is required"],
         unique: true
+    },
+    publicID: {
+        type: String,
+        required: [true, "PublicID is required"],
+    },
+    expireAt: {
+        type: Date,
+        default: Date.now,
+        expires: 3600,
     }
 })
 

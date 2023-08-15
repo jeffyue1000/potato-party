@@ -1,0 +1,116 @@
+body{
+    overflow: hidden;
+}
+.container{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    margin-top: 260px;
+    margin-bottom: 30px;
+    font-size: 25px;;
+    border: solid;
+}
+.upload-video-box{
+    padding: 4vh;
+    margin-bottom: 20%;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 3px;
+    width: 380px;
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 1px 30px rgb(184, 195, 222); 
+}
+.upload-header{
+    margin-top: 8px;
+    margin-bottom: 2px;
+}
+.upload-desc{
+    text-align: center;
+    margin: 25px;
+    width: 300px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.drop-box{
+    text-align: center;
+    padding: 5px;
+    border: solid;
+    border-color: #e8b720;
+    border-radius: 10px;
+    width: 300px;
+    transition: 0.2s;
+}
+.drop-box:hover{
+    color: white;
+    background-color: #e8b720;
+}
+.placeholder{
+    margin: 0px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+.video-preview-box{
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.video-preview{
+    margin: 10px;
+    margin-top: 0px;
+    border: solid;
+    border-color:#e8b720
+}
+.preview-btns{  
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.remove-btn, .submit-btn, .dashboard-btn, .logout-btn, .proceed-btn{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    background-color: white;
+    border-color: #e8b720;
+    border-style: solid;
+    border-radius: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition-duration: 0.2s;
+}
+.navigation-btns{
+    display: flex;
+    margin-top: 35px;
+}
+.proceed-btn{
+    margin-top: 15px;
+    padding-left: 22px;
+    padding-right: 22px;
+}
+.dashboard-btn, .logout-btn{
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-right: 20px;
+}
+.remove-btn:hover, .submit-btn:hover, .dashboard-btn:hover, .logout-btn:hover, .proceed-btn:hover{
+    color: white;
+    background-color: #e8b720;
+}
+.no-room-msg{
+    text-align: center;
+}
