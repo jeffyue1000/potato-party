@@ -69,7 +69,7 @@ export default function PersonalPage(){
 
     return(
         <div className="container">
-            <div className="title">Potato Couch Logo</div>
+            <div className="title">Potato Party Logo</div>
             <div className="watchlist-box">
                 <h1 className="watchlist-header">{toAdd.username}'s Watchlist</h1>
                 <div className="add-to-watchlist">
