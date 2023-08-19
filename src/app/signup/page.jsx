@@ -59,7 +59,7 @@ export default function SignupPage(){
 
     return(
         <div className="container">
-            <div className="title">Potato Couch Logo</div>
+            <div className="title">Potato Party Logo</div>
             <div className="signup-box">
                 <h1 className="signup-header">{loading ? "Loading..." : "Signup"}</h1>
                 <div className="user-input">

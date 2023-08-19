@@ -47,7 +47,7 @@ export default function LoginPage(){
 
     return(
         <div className="container">
-            <div className="title">Potato Couch Logo</div>
+            <div className="title">Potato Party Logo</div>
             <div className="login-box">
                 <h1 className="login-header">{loading ? "Loading..." : "Login"}</h1>
                 <div className="user-input">

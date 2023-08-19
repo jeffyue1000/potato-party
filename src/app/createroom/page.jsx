@@ -103,7 +103,7 @@ export default function Dropzone() {
 
     return (
         <div className="container">
-            <div className="title">Potato Couch Logo</div>
+            <div className="title">Potato Party Logo</div>
             <div className="upload-video-box">
                 <h1 className="upload-header">{loading ? "Loading..." : "Upload Video"}</h1>
                 <p className="upload-desc">Begin by uploading a .mp4 file below. (max 100MB)</p>

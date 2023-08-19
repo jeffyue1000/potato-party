@@ -53,7 +53,7 @@ export default function ProfilePage(){
     }
     return (
         <div className="container">
-            <div className="title">Potato Couch Logo</div>
+            <div className="title">Potato Party Logo</div>
             <div className="dashboard-box">
                 <h1 className="dashboard-header">{user.username}'s Profile</h1>
                 <div className="user-attributes"> 

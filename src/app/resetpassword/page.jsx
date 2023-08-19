@@ -49,7 +49,7 @@ export default function ForgotPasswordPage(){
 
     return(
         <div className="container">
-            <div className="title">Potato Couch Logo</div>
+            <div className="title">Potato Party Logo</div>
             <div className="reset-password-box">
                 <h1 className="reset-password-header">{loading ? "Loading..." : "Reset Password"}</h1>
                 <div className="user-input">

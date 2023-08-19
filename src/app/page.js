@@ -7,9 +7,9 @@ export default function Home() {
 
   return(
     <div className="container">
-        <div className="title">Potato Couch Logo</div>
+        <div className="title">Potato Party Logo</div>
         <div className="home-box">
-            <h1 className="home-header">Welcome to Potato Couch!</h1>
+            <h1 className="home-header">Welcome to Potato Party!</h1>
             <div className="home-directions">
                 <button className="profile-btn" onClick={() => {router.push("/login")}}>Login</button>
                 <button className="logout-btn" onClick={() => {router.push("/signup")}}>Signup</button>

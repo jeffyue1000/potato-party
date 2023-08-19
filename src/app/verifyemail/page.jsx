@@ -32,7 +32,7 @@ export default function VerifyEmailPage(){
 
     return(
         <div className="container"> 
-            <div className="title">Potato Couch Logo</div>
+            <div className="title">Potato Party Logo</div>
             <div className="verify-box">
                 <h1 className="verify-header">Verify Email</h1>
                 {!verified && (
