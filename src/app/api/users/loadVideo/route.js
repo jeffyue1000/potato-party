@@ -18,21 +18,4 @@ export async function POST(request){
     } catch(error){
         return NextResponse.json({error: error.message}, {status: 500});
     }
-    // try{
-    //     const encodedToken = request.cookies.get("videoPath")?.value || "";
-    //     if(encodedToken === ""){
-    //         return NextResponse.json({
-    //             message: "No video path found",
-    //             success: false
-    //         })
-    //     }
-    //     const decodedToken = jwt.verify(encodedToken, process.env.TOKEN_SECRET);
-
-    //     return NextResponse.json({
-    //         message: "Video path found",
-    //         data: decodedToken.path
-    //     })
-    // } catch(error){
-    //     return NextResponse.json({error: error.message}, {status: 500});
-    // }
 }
