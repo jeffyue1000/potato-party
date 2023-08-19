@@ -19,7 +19,7 @@ export function InvalidRoomPage(){
                 <br></br>
                 Maybe try a different code?
             </h1>
-            <button className="dashboard-btn" onClick={() => router.push("/dashboard")}>Return to Dashbaord</button>
+            <button className="dashboard-btn" onClick={() => router.push("/dashboard")}>Return to Dashboard</button>
         </div>
     )
 }
