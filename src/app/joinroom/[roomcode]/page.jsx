@@ -48,12 +48,6 @@ export default function Watchroom(){
                 videoRef.current.pause();
             }
         });
-
-        // newSocket.on("seek", (data) => {
-        //     if(!isSeeking){
-        //         videoRef.current.currentTime = data.time;
-        //     }
-        // });
     
         setSocket(newSocket);
     
@@ -118,8 +112,6 @@ export default function Watchroom(){
                             innerRef={videoRef}
                             onPause={handlePause}
                             onPlay={handlePlay}
-                            // onSeeking={handleSeeking}
-                            // onSeeked={handleSeeked}
                             width="500px"
                             controls
                         />

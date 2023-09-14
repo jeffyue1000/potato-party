@@ -15,15 +15,11 @@ io.on("connection", (socket) => {
     socket.on("sync-playback", (data) => {
         console.log("Received synced playback:", data);
 
-        // socket.broadcast.emit("sync-playback", data);
-
         io.emit("sync-playback", data);
     })
 
     socket.on("seek", (data) => {
         console.log("Received seek:", data);
-
-        // socket.broadcast.emit("seek", data);
 
         io.emit("seek", data);
     })

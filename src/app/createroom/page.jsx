@@ -8,7 +8,6 @@ import "./createroom.css";
 export default function Dropzone() {
     const router = useRouter();
     const [files, setFiles] = useState([]);
-    // const [rejected, setRejected] = useState([]);
     const [loading, setLoading] = useState(false);
     const [canDrop, setCanDrop] = useState(true);
     const [fileName, setFileName] = useState("");
@@ -23,9 +22,6 @@ export default function Dropzone() {
                 )
             ])
         }
-        // if(rejectedFiles?.length){
-        //     setRejected((previousFiles) => [...previousFiles, ...rejectedFiles]);
-        // }
     }, [])
     
     const {getRootProps, getInputProps, isDragActive} = useDropzone({

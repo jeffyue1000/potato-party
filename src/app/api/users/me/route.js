@@ -9,7 +9,7 @@ export async function GET(request){
     try{
         const userID = await tokenData(request);
         const user = await User.findOne({_id: userID});
-        return NextResponse.json({ //could return user directly maybe
+        return NextResponse.json({
             message: "User found",
             data: user,
         })
