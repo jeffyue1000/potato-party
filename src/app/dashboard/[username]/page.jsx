@@ -113,7 +113,7 @@ export default function PersonalPage(){
                 </ol>
                 <div className="navigation-btns">
                     <button className="profile-btn" onClick={() => {router.push(`/dashboard`)}}>Return to Profile</button>
-                    <button className="logout-btn" onClick={() => {logout}}>Return to Login</button>
+                    <button className="logout-btn" onClick={logout}>Return to Login</button>
                 </div>
             </div>
         </div>

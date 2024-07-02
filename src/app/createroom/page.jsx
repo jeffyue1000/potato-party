@@ -1,5 +1,4 @@
 "use client";
-import axios from "axios";
 import { useEffect, useState, useCallback } from "react";
 import { useDropzone } from 'react-dropzone';
 import { useRouter } from "next/navigation";
@@ -13,7 +12,7 @@ export default function Dropzone() {
     const [fileName, setFileName] = useState("");
     const [uploaded, setUploaded] = useState(false);
     
-    const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
+    const onDrop = useCallback((acceptedFiles) => {
         if(acceptedFiles?.length){
             setFiles((previousFiles) => [
                 ...previousFiles,

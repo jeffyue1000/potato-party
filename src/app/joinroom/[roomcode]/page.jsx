@@ -12,7 +12,6 @@ export default function Watchroom(){
     const [roomCode, setRoomCode] = useState("");
     const [socket, setSocket] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [isSeeking, setIsSeeking] = useState(false);
     const videoRef = useRef(null);
     
     useEffect(() => {
